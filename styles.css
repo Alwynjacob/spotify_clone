@@ -1,0 +1,311 @@
+body,
+html {
+  height: 100%;
+  margin: 0rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+  background-color: black;
+  color: white;
+}
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+header {
+  top: 0;
+  flex: 0.2;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  overflow:auto !important;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* And some styling for the navigation links here */
+header .nav-links {
+  margin-top: 1.7rem;
+}
+header .playlist {
+  margin-top: 2rem;
+}
+.link-flex {
+  display: flex;
+  border-radius: 5px;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding-left: 0.8rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.link-flex:hover {
+  background-color: #232323;
+  transition: all 0.3s;
+}
+
+.link-flex img {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.playlist .link-flex img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+#featured .playlist-card:hover {
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+#playlistGrid .playlist-card:hover {
+  background-color: #232323;
+  transition: all 0.3s;
+}
+header .search {
+  /* And finally some styling for the search functionality */
+  margin-left: 0.8rem;
+  margin-top: 0.5rem;
+}
+header .install {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 0.8rem;
+  padding-bottom: 0px;
+  font-size: 1.2rem;
+}
+main.main-content {
+  flex: 0.8;
+  background-color: #121212;
+  overflow-y: scroll !important;
+}
+
+/*nav bar styling*/
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+  background-color: #121212;
+  z-index: 1000;
+}
+.navbar .right {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  width: auto;
+}
+
+/* featured section */
+.headings {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2.5rem;
+  margin-right: 2rem;
+}
+
+#featured {
+  margin-left: 2.5rem;
+  margin-right: 4.5rem;
+  color: white;
+  overflow-y: auto !important;
+}
+#featured .container {
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: auto;
+  row-gap: 1rem;
+  justify-content: space-around;
+  color: white;
+  column-gap: 1rem;
+}
+#featured .playlist-card > img {
+  width: 60px;
+  height: 60px;
+}
+#featured .playlist-card {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  background-color: #282828;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* playerlist section */
+#playlistGrid {
+  margin-left: 2.5rem;
+  margin-right: 4.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row: auto;
+  gap: 20px;
+  background-color: #121212;
+  color: white;
+  overflow-y: auto !important;
+}
+
+#playlistGrid .playlist-card {
+  background-color: #181818;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+#playlistGrid .playlist-card img {
+  width: 100%;
+  height: auto;
+}
+
+#playlistGrid .playlist-card .creator {
+  /* Add some styling for the creator here */
+  color: #b3b3b3;
+  font-size: 15px;
+}
+
+/*music player style*/
+#musicplayer {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9%;
+  background-color: #121212;
+}
+.track {
+  /* And some styling for the track info here */
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+  width: 20vw;
+}
+.controls {
+  /* We can add styling specifically for the play/pause, next/prev buttons here */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+.track p {
+  font-size: 13px;
+  margin: 0;
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+
+.player-timeline {
+  display: flex;
+  align-items: center;
+}
+.timeline-slider {
+  margin: 0 10px;
+  width: 40vw;
+}
+
+.timeline-slider,
+.volume-slider {
+  -webkit-appearance: none;
+}
+
+.timeline-slider::-webkit-slider-runnable-track,
+.volume-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #ddd;
+  border: none;
+  border-radius: 100px;
+}
+
+.timeline-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #1bd760;
+  margin-top: -6px;
+}
+
+.timeline-slider:focus,
+.volume-slider:focus {
+  outline: none;
+}
+
+.timeline-slider:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+#musicPlayer .progress-bar {
+  /* And finally some styling for the progress bar */
+}
+
+.volume {
+  /* And some styling for the volume controls */
+  width: 20vw;
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider {
+  width: 100px;
+  height: 4px;
+}
+
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #playlistGrid,
+  #browseSection .genreGrid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  #playlistDetail  img {
+      width: 200px;
+      height: 200px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 767px) {
+  #playlistGrid,
+  #browseSection .genreGrid {
+      grid-template-columns: 1fr;
+  }
+
+  #playlistDetail  {
+      flex-direction: column;
+      align-items: start;
+  }
+
+  #playlistDetail  img {
+      width: 100%;
+  }
+}
